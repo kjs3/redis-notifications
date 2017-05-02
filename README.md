@@ -1,6 +1,6 @@
 # Redis Notifications
 
-Redis pub-sub features are pretty well advertised. But maybe less well known is that you can setup Redis to publish messages about internal events. For example, you can listen for key is delete or expire events and then take action based on that.
+Redis pub-sub features are pretty well advertised. But maybe less well known is Redis' ability to publish messages about internal events. For example, you can listen for key is delete or expire events and then take action based on that.
 
 This repo simulates a self-updating cache using Javascript (Node.js).
 
@@ -35,7 +35,7 @@ Edit redis.conf to notify/publish key events. This is disabled by default since 
 notify-keyspace-events Ex
 ```
 
-Make sure to restart Redis: 
+Make sure to restart Redis:
 
 ```
 brew services restart redis
