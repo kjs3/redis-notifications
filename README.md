@@ -13,3 +13,44 @@ Here's the gist of it:
 * The result is stored again in Redis with an expiration.
 * rinse/repeat
 
+### Setup
+
+Install Redis (below is for MacOS/Homebrew):
+
+```
+brew install redis
+```
+
+Edit redis.conf to notify/publish key events. This is disabled by default since it does require some overhead.
+
+```
+# this file is in /usr/local/etc/redis.conf for MacOS using Homebrew
+
+#
+#  By default all notifications are disabled because most users don't need
+#  this feature and the feature has some overhead. Note that if you don't
+#  specify at least one of K or E, no events will be delivered.
+#  notify-keyspace-events ""
+
+notify-keyspace-events Ex
+```
+
+Make sure to restart Redis: 
+
+```
+brew services restart redis
+```
+
+Install all the js modules:
+
+```
+yarn
+```
+
+### Usage
+
+Run the project:
+
+```
+yarn start
+```
